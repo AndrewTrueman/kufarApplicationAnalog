@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src=""></script>
 </head>
-<body> <h1>KufarAnalog</h1>
+<body><h1>KufarAnalog</h1>
 <hr>
 <h4>Подробная информация о товаре</h4>
 <b>Название товара: </b>${product.name}<br>

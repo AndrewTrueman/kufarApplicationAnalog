@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src=""></script>
 </head>
-<body> <h1>KufarAnalog</h1>
+<body><h1>KufarAnalog</h1>
 <hr>
 <h4>Товары со всей Беларуси</h4>
 <#list productList as product>
     <div>
-        <p><b>${product.name}</b> ${product.price} |  <a href = "/product/${product.id}">Подробнее...</a></p>
+        <p><b>${product.name}</b> ${product.price} | <a href="/product/${product.id}">Подробнее...</a></p>
     </div>
 </#list>
 <hr>
