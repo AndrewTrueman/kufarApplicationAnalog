@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductService {
     private long ID = 0;
     @Getter
-    private List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
 
     {
         products.add(new Product(++ID, "Iphone", "15 iphone", 2500, "Grodno", "Andrew"));
