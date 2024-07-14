@@ -7,57 +7,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src=""></script>
 </head>
-<body>
-<header>
-    <h1>Аналог Авито</h1>
-    <form action="/search" method="get">
-        <input type="text" name="query" placeholder="Поиск объявлений..." value="${query!}">
-        <button type="submit">Найти</button>
-    </form>
-</header>
-
-<main>
-    <aside>
-        <h2>Фильтры</h2>
-        <form action="/filter" method="get">
-            <label for="category">Категория:</label>
-            <select name="category" id="category">
-                <option value="">Все категории</option>
-                <#list categories as category>
-                    <option value="${category.id}">${category.name}</option>
-                </#list>
-            </select>
-
-            <label for="price_min">Цена от:</label>
-            <input type="number" name="price_min" id="price_min" value="${price_min!}">
-
-            <label for="price_max">Цена до:</label>
-            <input type="number" name="price_max" id="price_max" value="${price_max!}">
-
-            <button type="submit">Применить</button>
-        </form>
-    </aside>
-
-    <section>
-        <h2>Объявления</h2>
-        <#if ads?? && ads?size > 0>
-            <ul>
-                <#list ads as ad>
-                    <li>
-                        <a href="/ads/${ad.id}">
-                            <h3>${ad.title}</h3>
-                            <p>${ad.description}</p>
-                            <p>Цена: ${ad.price} руб.</p>
-                            <p>Категория: ${ad.category.name}</p>
-                        </a>
-                    </li>
-                </#list>
-            </ul>
-        <#else>
-            <p>Объявления не найдены</p>
-        </#if>
-    </section>
-</main>
+<body> <h1>KufarAnalog</h1>
+<hr>
+<h4>Товары со всей Беларуси</h4>
+<#list productList as product>
+    <div>
+        <p><b>${product.name}</b> ${product.price} |  <a href = "/product/${product.id}">Подробнее...</a></p>
+    </div>
+</#list>
+<hr>
+<h3>Создать новый товар</h3>
+<form action="/product/create" method="post">
+    Название объявления: <label>
+        <input type="text" name="name"/>
+    </label><br><br>
+    Описание объявления: <label>
+        <input type="text" name="description"/>
+    </label><br><br>
+    Цена: <label>
+        <input type="number" name="price"/>
+    </label><br><br>
+    Город: <label>
+        <input type="text" name="location"/>
+    </label><br><br>
+    Имя: <label>
+        <input type="text" name="seller"/>
+    </label><br><br>
+    <input type="submit" Value="Добавить товар"/>
+</form>
 
 <footer>
     <p>&copy; 2024 Аналог Куфара</p>
