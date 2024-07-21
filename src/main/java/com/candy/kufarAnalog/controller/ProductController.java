@@ -8,27 +8,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Controller
 @RequiredArgsConstructor
-public class productController {
+public class ProductController {
     private final ProductService productService;
 
     @GetMapping("/")
-    public String productList(Model model) {
-        model.addAttribute("productList", productService.getProducts());
+    public String productList(@RequestParam(name = "name", required = false) String name, Model model) {
+        model.addAttribute("productList", productService.listAllProducts(name));
         return "productList";
     }
 
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model) {
-        model.addAttribute("product", productService.getProductById(id));
+        Product product = productService.getProductById(id);
+        model.addAttribute("product", product);
+        model.addAttribute("images", product.getImages());
         return "product-info";
     }
 
     @PostMapping("/product/create")
-    public String createProduct(Product product) {
-        productService.saveProduct(product);
+    public String createProduct(@RequestParam("file1") MultipartFile file1,@RequestParam("file2") MultipartFile file2,
+                                @RequestParam("file3") MultipartFile file3,
+                                @RequestParam("file4") MultipartFile file4,
+                                Product product) throws IOException {
+        productService.saveProduct(product, file1,file2,file3,file4);
         return "redirect:/";
     }
 

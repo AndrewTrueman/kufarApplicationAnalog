@@ -10,6 +10,9 @@
 <body><h1>KufarAnalog</h1>
 <hr>
 <h4>Подробная информация о товаре</h4>
+<#list images as img>
+    <img src="/images/${img.getId()}" height="200px"/><br><br>
+</#list>
 <b>Название товара: </b>${product.name}<br>
 <b>Описание товара: </b>${product.description}<br>
 <b>Стоимость товара: </b>${product.price}<br>
