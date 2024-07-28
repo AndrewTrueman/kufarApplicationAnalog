@@ -2,16 +2,13 @@ package com.candy.kufarAnalog.model;
 
 import com.candy.kufarAnalog.model.enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -51,7 +48,7 @@ public class User implements UserDetails {
         dateOfCreation = LocalDateTime.now();
     }
 
-        //security
+    //security
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -80,6 +77,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active ;
+        return active;
     }
 }

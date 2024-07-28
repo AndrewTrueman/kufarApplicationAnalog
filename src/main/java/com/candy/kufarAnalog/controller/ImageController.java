@@ -3,7 +3,6 @@ package com.candy.kufarAnalog.controller;
 import com.candy.kufarAnalog.model.Image;
 import com.candy.kufarAnalog.repository.ImageRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

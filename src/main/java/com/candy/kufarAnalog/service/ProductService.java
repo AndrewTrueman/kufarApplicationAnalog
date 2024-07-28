@@ -1,17 +1,14 @@
 package com.candy.kufarAnalog.service;
 
-import com.candy.kufarAnalog.exception.ProductNotFoundException;
 import com.candy.kufarAnalog.model.Image;
 import com.candy.kufarAnalog.model.Product;
 import com.candy.kufarAnalog.repository.ProductRepository;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j

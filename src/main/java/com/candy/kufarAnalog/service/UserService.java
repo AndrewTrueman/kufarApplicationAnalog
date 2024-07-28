@@ -1,4 +1,5 @@
 package com.candy.kufarAnalog.service;
+
 import com.candy.kufarAnalog.model.User;
 import com.candy.kufarAnalog.model.enums.Role;
 import com.candy.kufarAnalog.repository.UserRepository;
