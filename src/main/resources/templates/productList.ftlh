@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <script src=""></script>
 </head>
-<body><h1>KufarAnalog</h1>
+<body><h1>KufarAnalog | <a href = "/login">Войти</a></h1>
 <hr>
-<h4>Товары со всей Беларуси</h4>
+<form action = "/logout" method="post" >
+    <input type = "hidden" name = "_csrf" value="${_csrf.token}">
+    <input type = "submit" value="Выйти"/>
+</form>
 <form action = "/" method="get">
     Поиск по названию объявления: <label>
         <input type = text name = name>

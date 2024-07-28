@@ -22,7 +22,7 @@ public class ProductService {
 
     public List<Product> listAllProducts(String name) {
         if (name != null && !name.isEmpty()) {
-           return productRepository.findByName(name);
+            return productRepository.findByName(name);
         }
         return productRepository.findAll();
     }
@@ -52,15 +52,14 @@ public class ProductService {
         }
         log.info("Saving new product. Name -  {}; Seller  = {};", product.getName(), product.getSeller());
         Product productFromDB = productRepository.save(product);
-        productFromDB.setPreviewImageId(productFromDB.getImages().get(0).getId());
+        productFromDB.setPreviewImageId(productFromDB.getImages().getFirst().getId());
         productRepository.save(product);
     }
 
 
-    private void addImage(){
+    private void addImage() {
         //todo заменить в методе выше дупликацию кода в этот метод и использовать его
     }
-
 
 
     private Image toImageEntity(MultipartFile file) throws IOException {

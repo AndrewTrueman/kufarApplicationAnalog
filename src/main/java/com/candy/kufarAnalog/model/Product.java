@@ -34,11 +34,13 @@ public class Product {
     private List<Image> images = new ArrayList<>();
     private long previewImageId;
     private LocalDateTime createdDate;
+
     @PrePersist
-    private void init(){
+    private void init() {
         createdDate = LocalDateTime.now();
     }
-    public void addImageToProduct(Image image){
+
+    public void addImageToProduct(Image image) {
         image.setProduct(this);
         images.add(image);
     }
