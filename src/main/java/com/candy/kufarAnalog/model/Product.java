@@ -27,11 +27,11 @@ public class Product {
     private double price;
     @Column(name = "location")
     private String location;
-    @Column(name = "seller")
-    private String seller;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
     private List<Image> images = new ArrayList<>();
     private long previewImageId;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    private User user;
     private LocalDateTime createdDate;
 
     @PrePersist

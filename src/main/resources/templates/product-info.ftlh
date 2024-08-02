@@ -17,12 +17,13 @@
 <b>Описание товара: </b>${product.description}<br>
 <b>Стоимость товара: </b>${product.price}<br>
 <b>Город продажи: </b>${product.location}<br>
-<b>Продавец: </b>${product.seller}<br>
+<b>Продавец: </b>${product.user.username}<br>
+<b>Номер телефона: </b>${product.user.phoneNumber}<br>
 <hr>
 <h3>Создать новый товар</h3>
-<form action="/product/delete/${product.id}" method="post">
-    <input type="submit" Value="Удалить товар"/>
-</form>
+<#--<form action="/product/delete/${product.id}" method="post">-->
+<#--    <input type="submit" Value="Удалить товар"/>-->
+<#--</form>-->
 
 <footer>
     <p>&copy; 2024 Аналог Куфара</p>
