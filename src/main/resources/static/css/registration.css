@@ -1,0 +1,73 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: auto; /* Фиксирует футер внизу */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+h4 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+form {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 350px; /* увеличена ширина формы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: calc(100% - 20px); /* учитываем внутренние отступы */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* учитываем padding в ширине */
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+h2 {
+    color: red;
+    text-align: center;
+}
