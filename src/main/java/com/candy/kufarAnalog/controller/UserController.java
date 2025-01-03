@@ -1,7 +1,9 @@
 package com.candy.kufarAnalog.controller;
 
 import com.candy.kufarAnalog.model.User;
+import com.candy.kufarAnalog.service.ProductService;
 import com.candy.kufarAnalog.service.UserService;
+import java.security.Principal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    private final ProductService productService;
 
     @GetMapping("/login")
     public String login() {
@@ -23,6 +26,11 @@ public class UserController {
         return "registration";
     }
 
+    @GetMapping("/profile")
+    public String profile( Principal principal,  Model model) {
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        return "profile";
+    }
 
     @PostMapping("/registration")
     public String createUser(User user, Model model) {

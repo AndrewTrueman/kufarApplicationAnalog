@@ -1,6 +1,8 @@
 package com.candy.kufarAnalog.controller;
 
 import com.candy.kufarAnalog.model.Product;
+import com.candy.kufarAnalog.model.User;
+import com.candy.kufarAnalog.service.CategoryService;
 import com.candy.kufarAnalog.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,19 +20,22 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final CategoryService categoryService;
 
     @GetMapping("/")
     public String productList(@RequestParam(name = "name", required = false) String name, Principal principal,  Model model) {
         model.addAttribute("productList", productService.listAllProducts(name));
+        model.addAttribute("categories  ", categoryService.getCategories());
         model.addAttribute("user", productService.getUserByPrincipal(principal));
-        return "productList";
+        return "home";
     }
 
     @GetMapping("/product/{id}")
-    public String productInfo(@PathVariable Long id, Model model) {
+    public String productInfo(@PathVariable Long id, Principal principal, Model model) {
         Product product = productService.getProductById(id);
         model.addAttribute("product", product);
         model.addAttribute("images", product.getImages());
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
         return "product-info";
     }
 
@@ -43,11 +48,23 @@ public class ProductController {
         return "redirect:/";
     }
 
+    @GetMapping("/product/create")
+    public String createProduct( Principal principal,  Model model) throws IOException {
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        return "product-create";
+    }
+
+    @GetMapping("/product/my")
+    public String productList(Principal principal, Model model) {
+        User user = productService.getUserByPrincipal(principal);
+        model.addAttribute("productList", productService.listAllProductsByUser(user.getId()));
+        model.addAttribute("user", user);
+        return "product-my";
+    }
+
     @PostMapping("/product/delete/{id}")
     public String deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
         return "redirect:/";
     }
-
-
 }
