@@ -20,6 +20,10 @@ footer {
     color: #fff;
     margin-top: auto; /* Фиксирует футер внизу */
 }
+a {
+    color: white;
+}
+
 .form-control {
     fill: none;
     background: transparent;

@@ -29,7 +29,9 @@
 </header>
 <main class="product-detail">
     <section class="product-images">
-        <img class="product-image" src="/images/${product.images[0].getId()}" alt="Главное изображение">
+        <#list images as img>
+            <img  class="product-image" src="/images/${img.getId()}"/><br><br>
+        </#list>
     </section>
 
     <section class="product-info">

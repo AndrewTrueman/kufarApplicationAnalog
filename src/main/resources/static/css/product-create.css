@@ -57,6 +57,10 @@ form label {
   margin-bottom: 10px;
   color: #333;
 }
+
+a {
+  color: white;
+}
 input[type="text"], input[type="number"], input[type="file"], textarea, input[type="submit"] {
   width: 100%;
   padding: 10px;

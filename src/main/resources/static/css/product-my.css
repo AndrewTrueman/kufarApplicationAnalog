@@ -10,20 +10,6 @@ body {
     min-height: 100vh;
 }
 
-header a {
-    color: white;
-}
-
-.form-control {
-    fill: none;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    margin-bottom: 16px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
 header {
     background-color: #007BFF;
     color: #fff;
@@ -53,42 +39,14 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Основной контейнер */
-.container {
-    display: flex;
+main {
+    padding: 1rem;
     flex: 1;
 }
 
-/* Боковая панель */
-.sidebar {
-    width: 250px;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    border-right: 1px solid #ddd;
-}
-
-.sidebar h2, .sidebar h3 {
+h2 {
     margin-top: 0;
-}
-
-.sidebar form label, .sidebar form input, .sidebar form select, .sidebar form button {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.sidebar form button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Контент */
-.content {
-    flex: 1;
-    padding: 1rem;
+    color: #007BFF;
 }
 
 /* Список товаров */
@@ -96,7 +54,7 @@ nav ul li a {
     list-style-type: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1rem;
 }
 
@@ -107,16 +65,36 @@ nav ul li a {
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+
 }
 
 .product-image {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    display: block;
+    margin: 0 auto 1rem;
     object-fit: cover;
-    margin: 0 auto 0.5rem;
+    display: block;
+}
+
+
+.product-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.product-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Фиксируем футер */

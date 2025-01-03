@@ -1,10 +1,12 @@
 package com.candy.kufarAnalog.service;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CategoryService {
 
-    List<String> getCategories() {
+    public List<String> getCategories() {
         return List.of(
             "Недвижимость",
             "Авто и запчасти",
