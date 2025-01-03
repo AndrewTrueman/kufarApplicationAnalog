@@ -42,7 +42,8 @@
         <#if productList??>
             <ul>
                 <#list productList as product>
-                    <li>
+                    <li class="product">
+                        <img class="product-image" src="/images/${product.images[0].getId()}" alt="Главное изображение">
                         <strong>${product.name}</strong> - ${product.price}
                         <a href="/product/${product.id}">Подробнее...</a>
                     </li>
